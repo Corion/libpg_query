@@ -74,7 +74,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <time.h>
-#include <sys/wait.h>
+//#include <sys/wait.h>
 #include <ctype.h>
 #include <sys/stat.h>
 #include <sys/socket.h>
