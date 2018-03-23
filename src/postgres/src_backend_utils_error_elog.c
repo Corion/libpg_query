@@ -1828,8 +1828,10 @@ get_errno_symbol(int errnum)
 		case EHOSTUNREACH:
 			return "EHOSTUNREACH";
 #endif
+#ifdef EIDRM
 		case EIDRM:
 			return "EIDRM";
+#endif
 		case EINPROGRESS:
 			return "EINPROGRESS";
 		case EINTR:
