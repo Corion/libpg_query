@@ -14,7 +14,11 @@
 #ifndef LIBPQ_H
 #define LIBPQ_H
 
+#ifndef WIN32
 #include <netinet/in.h>
+#else
+#include <winsock2.h>
+#endif
 
 #include "lib/stringinfo.h"
 #include "libpq/libpq-be.h"

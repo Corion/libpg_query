@@ -21,7 +21,11 @@
 #ifdef HAVE_SYS_UN_H
 #include <sys/un.h>
 #endif
+#ifndef WIN32
 #include <netinet/in.h>
+#else
+#include <winsock2.h>
+#endif
 
 #ifdef HAVE_STRUCT_SOCKADDR_STORAGE
 
