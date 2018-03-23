@@ -214,7 +214,7 @@ static __thread int	recursion_depth = 0;
 
 static const char *err_gettext(const char *str) pg_attribute_format_arg(1);
 static void set_errdata_field(MemoryContextData *cxt, char **ptr, const char *str);
-static void write_console(const char *line, int len);
+static void write_console(const char *line, int len) {};
 static void setup_formatted_log_time(void);
 static void setup_formatted_start_time(void);
 static const char *process_log_prefix_padding(const char *p, int *padding);
@@ -1736,7 +1736,8 @@ useful_strerror(int errnum)
 #ifdef WIN32
 	/* Winsock error code range, per WinError.h */
 	if (errnum >= 10000 && errnum <= 11999)
-		return pgwin32_socket_strerror(errnum);
+		//return pgwin32_socket_strerror(errnum);
+	    return "";
 #endif
 	str = strerror(errnum);
 
@@ -1984,7 +1985,7 @@ write_stderr(const char *fmt,...)
 	 * On Win32, we print to stderr if running on a console, or write to
 	 * eventlog if running as a service
 	 */
-	if (pgwin32_is_service())	/* Running as a service */
+	if (0)	/* Running as a service */
 	{
 		write_eventlog(ERROR, errbuf, strlen(errbuf));
 	}
