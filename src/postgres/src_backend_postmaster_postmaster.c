@@ -80,7 +80,11 @@
 #include <sys/socket.h>
 #include <fcntl.h>
 #include <sys/param.h>
+#ifndef WIN32
 #include <netinet/in.h>
+#else
+#include <winsock2.h>
+#endif
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <limits.h>

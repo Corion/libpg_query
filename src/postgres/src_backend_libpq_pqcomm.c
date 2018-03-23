@@ -83,7 +83,11 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <netdb.h>
+#ifndef WIN32
 #include <netinet/in.h>
+#else
+#include <winsock2.h>
+#endif
 #ifdef HAVE_NETINET_TCP_H
 #include <netinet/tcp.h>
 #endif
