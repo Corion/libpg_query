@@ -15,10 +15,10 @@
 
 #include <ctype.h>
 #include <netdb.h>
-#include <pwd.h>
 
 /* socket has a different definition on WIN32 */
 #ifndef WIN32
+#include <pwd.h>
 typedef int pgsocket;
 
 #define PGINVALID_SOCKET (-1)
