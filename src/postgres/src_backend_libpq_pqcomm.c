@@ -76,7 +76,7 @@
 
 #include <signal.h>
 #include <fcntl.h>
-#include <grp.h>
+// #include <grp.h>
 #include <unistd.h>
 #include <sys/file.h>
 #include <sys/socket.h>
